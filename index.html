@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memorize Gifts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #E0D2C7;
+      color: #2e2e2e;
+    }
+
+    header {
+      background-color: #955E3F;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .main-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .main-section h1 {
+      font-size: 2.5em;
+      color: #955E3F;
+      margin-bottom: 10px;
+    }
+
+    .main-section p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-section {
+    position: relative;
+    background-image: url('/img/04.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden; /* ESSENCIAL */
+    }
+
+    .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* escurece a imagem para dar contraste no texto */
+    z-index: 1;
+    }
+
+    .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    }
+
+    .hero-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: white;
+    }
+
+    .hero-content p {
+    font-size: 1.2em;
+    color: #f5f5f5;
+    }
+
+    #text-plans1{
+        font-weight: 700;
+    }
+
+    #btn-vermais{
+        background-color: #fff;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .benefits-section {
+    background-color: #fff;
+    padding: 10px 10px;
+    text-align: center;
+    border-top: 5px solid #D29B7C;
+    border-bottom: 5px solid #D29B7C;
+    margin-bottom: 10px;
+    }
+
+    .benefits-content {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+
+    .benefits-content h2 {
+    font-size: 2em;
+    color: #955E3F;
+    margin-bottom: 20px;
+    }
+
+    .benefits-content p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    }
+
+
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .plan-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 3px solid #A86C6C;
+      transition: transform 0.3s;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .plan-title {
+      font-size: 1.5em;
+      color: #A86C6C;
+      margin-bottom: 15px;
+    }
+
+    .plan-description {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .plan-description li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background-color: #D29B7C;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #a86c6c;
+    }
+
+    footer {
+      background-color: #955E3F;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .plans {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Memorize Gifts</div>
+    <nav>
+      <!-- Links futuros se necessário -->
+    </nav>
+  </header>
+
+  <section class="main-section">
+    <!-- Quero a imagem como plano de fundo dessa div e o h1 e p na frente -->
+    <div class="hero-section">
+    <div class="hero-content">
+        <h1>Assinaturas para eternizar momentos</h1>
+        <p>Escolha o plano ideal e receba fotos reveladas direto na sua casa com carinho, cuidado e qualidade.</p>
+        <p id="text-plans1">Planos a partir de R$25/mês</p>
+        <button id="btn-vermais" onclick="document.getElementById('planos').scrollIntoView({ behavior: 'smooth' });">
+        Ver Planos
+        </button>
+
+    </div>
+    </div>
+
+    <section class="benefits-section">
+    <div class="benefits-content">
+        <h2>Por que revelar suas fotos em papel?</h2>
+        <p>
+        Fotos em papel têm o poder de eternizar momentos de forma tangível. Ao invés de se perderem em milhares de arquivos digitais, elas ganham vida em álbuns, molduras e memórias que você pode tocar, reviver e compartilhar a qualquer hora.
+        </p>
+        <p>
+        Já as fotos digitais, por mais práticas que sejam, correm o risco de serem apagadas acidentalmente, perdidas em celulares quebrados ou esquecidas em pastas. O que era pra durar uma vida pode sumir em segundos.
+        </p>
+        <p>
+        Pensando nisso, criamos <strong>3 planos especiais</strong> para que você possa escolher a melhor forma de eternizar seus momentos — todos com <strong>frete grátis</strong> e envio para <strong>todo o Brasil</strong>.
+        </p>
+    </div>
+    </section>
+
+    <div class="plans" id="planos">
+      <!-- Plano 1 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Essencial</div>
+        <ul class="plan-description">
+          <li>10 fotos por mês</li>
+          <li>Entrega padrão</li>
+          <li>Envelope especial</li>
+        </ul>
+        <button class="btn" onclick="assinar('Plano Essencial')">Assinar</button>
+      </div>
+
+      <!-- Plano 2 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Premium</div>
+        <ul class="plan-description">
+          <li>20 fotos por mês</li>
+          <li>Entrega rápida</li>
+          <li>Envelope premium</li>
+          <li>1 brinde surpresa</li>
+        </ul>
+        <button class="btn" onclick="assinar('Plano Premium')">Assinar</button>
+      </div>
+
+      <!-- Plano 3 -->
+      <div class="plan-card">
+        <div class="plan-title">Plano Memorável</div>
+        <ul class="plan-description">
+          <li>30 fotos por mês</li>
+          <li>Entrega expressa</li>
+          <li>Caixa personalizada</li>
+          <li>2 brindes surpresa</li>
+          <li>Mensagem personalizada</li>
+        </ul>
+        <button class="btn" onclick="assinar('Plano Memorável')">Assinar</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Memorize Gifts - Todos os direitos reservados
+  </footer>
+
+  <script>
+    function assinar(plano) {
+      alert(`Você selecionou o ${plano}! Em breve, redirecionaremos para o pagamento.`);
+    }
+  </script>
+</body>
+</html>
