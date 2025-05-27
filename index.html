@@ -23,8 +23,8 @@
       flex-direction: column;
     }
 
-    #logo {
-      max-width: 90%;
+    .logo {
+      max-width: 30%;
     }
 
     .main-section {
@@ -168,7 +168,17 @@
       margin-bottom: 10px;
     }
 
-    .btn {
+    .historia-mensal {
+      background-color: #D29B7C;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .historia-anual {
       background-color: #D29B7C;
       color: white;
       border: none;
@@ -181,6 +191,64 @@
     .btn:hover {
       background-color: #a86c6c;
     }
+
+    .switch-label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #a86c6c;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.label-text {
+  margin-left: 10px;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #a86c6c;
+  font-weight: bold;
+}
+
+.plan-price {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
 
     footer {
       background-color: #955E3F;
@@ -215,19 +283,53 @@
     opacity: 1;
   }
 
+  .whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+
   @media (max-width: 768px) {
     .carousel {
       height: 200px;
     }
+
+    .logo{
+      max-width: 50%;
+    }
   }
 
 
-    @media (max-width: 768px) {
-      .plans {
-        flex-direction: column;
-        align-items: center;
-      }
+  @media (max-width: 768px) {
+    .plans {
+      flex-direction: column;
+      align-items: center;
     }
+
+    .logo{
+      max-width: 50%;
+    }
+  }
   </style>
 </head>
 <body>
@@ -269,11 +371,16 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
         <p>
         Os primeiros sorrisos, os pezinhos gordinhos, o olhar curioso, os ensaios temáticos de todo mês… tudo passa rápido demais. Nosso plano é uma forma de guardar esse comecinho tão precioso, sem esforço. Todo mês, você revela o que o celular registrou — e transforma em memória viva o que hoje parece cotidiano, mas amanhã será pura saudade.
         </p>
-        <p>
-        Pensando nisso, criamos <strong>3 planos especiais</strong> para que você possa escolher a melhor forma de eternizar seus momentos — todos com <strong>frete grátis</strong> e envio para <strong>todo o Brasil</strong>.
-        </p>
     </div>
     </section>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+      <div class="plan-price" data-mensal="Plano Mensal" data-anual="Plano Anual">Plano Mensal</div>
+      <label class="switch-label">
+        <input type="checkbox" id="togglePlano">
+        <span class="slider"></span>
+      </label>
+    </div>
 
     <div class="plans" id="planos">
       <!-- Plano 1 -->
@@ -283,8 +390,10 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>15 fotos tamanho 10x15</li>
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>1 foto tamanho 15x21 de brinde a cada 3 meses.</li>
+          <div class="plan-price" data-mensal="R$ 29,98/mês" data-anual="R$ 320,00 em 12x de R$ 26,76">R$ 29,98/mês</div>
         </ul>
-        <button class="btn" onclick="assinar('Plano Essencial')">Assinar</button>
+        <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/B2lBlfo'" >Assinar Plano Mensal</button>
+        <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/FVyDMTk'" >Assinar Plano Anual</button>
       </div>
 
       <!-- Plano 2 -->
@@ -295,21 +404,25 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>1 foto tamanho 15x21</li>
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>12 mini polaroids de brinde a cada 3 meses.</li>
+          <div class="plan-price" data-mensal="R$ 49,98/mês" data-anual="R$ 550,00 em 12x de R$ 45,83">R$ 49,98/mês</div>
         </ul>
-        <button class="btn" onclick="assinar('Plano Premium')">Assinar</button>
+        <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/DA9J2di'">Assinar Plano Mensal</button>
+        <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/IA1ysjK'"></a>Assinar Plano Anual</button>
       </div>
 
       <!-- Plano 3 -->
       <div class="plan-card">
-        <div class="plan-title">Plano MemorávelPlano História:</div>
+        <div class="plan-title">Plano História:</div>
         <ul class="plan-description">
           <li>25 fotos tamanho 10x15</li>
           <li>2 fotos tamanho 15x21</li>
           <li>12 mini polaroids</li>
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>1 polaroid de mesa de brinde a cada 3 meses, ou voucher de R$20,00 em produtos da loja disponíveis no mês vigente.</li>
+          <div class="plan-price" data-mensal="R$ 59,98/mês" data-anual="R$ 690,00 em 12x de R$ 57,50">R$ 59,98/mês</div>
         </ul>
-        <button class="btn" onclick="assinar('Plano Memorável')">Assinar</button>
+        <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/6ca2V19'">Assinar Plano Mensal</button>
+        <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/X463CQH'"></a>Assinar Plano Anual</button>
       </div>
     </div>
   </section>
@@ -318,12 +431,50 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
     &copy; 2025 Memorize Gifts - Todos os direitos reservados
   </footer>
 
+  <a href="https://wa.me/5521995865162" target="_blank" class="whatsapp-float" aria-label="Conversar no WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+  </a>
+
+</body>
+
   <script>
     function assinar(plano) {
       alert(`Você selecionou o ${plano}! Em breve, redirecionaremos para o pagamento.`);
     }
   </script>
-</body>
+
+<script>
+  const toggle = document.getElementById('togglePlano');
+  const prices = document.querySelectorAll('.plan-price');
+  const btnMensal = document.querySelectorAll('.historia-mensal');
+  const btnAnual = document.querySelectorAll('.historia-anual');
+
+  function atualizarVisibilidade() {
+    if (toggle.checked) {
+      // Preço anual
+      prices.forEach(price => {
+        price.textContent = price.getAttribute('data-anual');
+      });
+
+      // Mostra só botões anuais
+      btnMensal.forEach(btn => btn.style.display = 'none');
+      btnAnual.forEach(btn => btn.style.display = 'inline-block');
+    } else {
+      // Preço mensal
+      prices.forEach(price => {
+        price.textContent = price.getAttribute('data-mensal');
+      });
+
+      // Mostra só botões mensais
+      btnMensal.forEach(btn => btn.style.display = 'inline-block');
+      btnAnual.forEach(btn => btn.style.display = 'none');
+    }
+  }
+
+  toggle.addEventListener('change', atualizarVisibilidade);
+  window.addEventListener('DOMContentLoaded', atualizarVisibilidade);
+</script>
+
 <script>
   const images = document.querySelectorAll('.carousel-image');
   let current = 0;
