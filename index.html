@@ -78,9 +78,16 @@
     }
 
     .hero-content h1 {
-    font-size: 2.8em;
+    font-size: 2.2em;
     margin-bottom: 10px;
-    color: rgb(0, 0, 0);
+    color: #A86C6C;
+    font-weight: 700;
+    }
+
+    .subtitle {
+    font-size: 1.2em;
+    color: #000000;
+    font-style: italic;
     }
 
     .hero-content p {
@@ -155,6 +162,7 @@
       font-size: 1.5em;
       color: #A86C6C;
       margin-bottom: 15px;
+      font-weight: 600;
     }
 
     .plan-description {
@@ -209,7 +217,7 @@
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
+  background-color: #b1b1b1;
   transition: .4s;
   border-radius: 30px;
 }
@@ -314,20 +322,13 @@ input:checked + .slider:before {
       height: 200px;
     }
 
-    .logo{
-      max-width: 50%;
-    }
-  }
-
-
-  @media (max-width: 768px) {
     .plans {
       flex-direction: column;
       align-items: center;
     }
 
     .logo{
-      max-width: 50%;
+      max-width: 70%;
     }
   }
   </style>
@@ -350,7 +351,7 @@ input:checked + .slider:before {
 
     <div class="hero-content">
         <h1>FOTOS REVELADAS O ANO TODO!</h1>
-        <p>Reviva seus melhores momentos todo mês</p>
+        <p class="subtitle">Reviva seus melhores momentos todo mês</p>
         <p>Escolha um plano de assinatura anual ou mensal e receba em sua casa, todo mês, um pacote de fotos reveladas de alta qualidade, com durabilidade de 200 anos. Ao assinar um plano, suas fotos favoritas saem da tela e ganham espaço na vida real — pra você reviver sorrisos, colecionar memórias e espalhar afeto pelas paredes, álbuns ou corações.</p>
         <p id="text-plans1">Planos a partir de R$ 29,98 por mês.</p>
         <button id="btn-vermais" onclick="document.getElementById('planos').scrollIntoView({ behavior: 'smooth' });">
@@ -374,8 +375,8 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
     </div>
     </section>
 
-    <div style="text-align: center; margin-bottom: 20px;">
-      <div class="plan-price" data-mensal="Plano Mensal" data-anual="Plano Anual">Plano Mensal</div>
+    <div style="text-align: center; margin-bottom: 20px; margin-top: 70px;">
+      <div style="font-size: 30px;" class="plan-price" data-mensal="Plano Mensal" data-anual="Plano Anual">Plano Mensal</div>
       <label class="switch-label">
         <input type="checkbox" id="togglePlano">
         <span class="slider"></span>
@@ -390,7 +391,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>15 fotos tamanho 10x15</li>
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>1 foto tamanho 15x21 de brinde a cada 3 meses.</li>
-          <div class="plan-price" data-mensal="R$ 29,98/mês" data-anual="R$ 320,00 em 12x de R$ 26,76">R$ 29,98/mês</div>
+          <div style="text-align: center;" class="plan-price" data-mensal="R$ 29,98/mês" data-anual="R$ 320,00 em 12x de R$ 26,76">R$ 29,98/mês</div>
         </ul>
         <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/B2lBlfo'" >Assinar Plano Mensal</button>
         <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/FVyDMTk'" >Assinar Plano Anual</button>
@@ -404,7 +405,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>1 foto tamanho 15x21</li>
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>12 mini polaroids de brinde a cada 3 meses.</li>
-          <div class="plan-price" data-mensal="R$ 49,98/mês" data-anual="R$ 550,00 em 12x de R$ 45,83">R$ 49,98/mês</div>
+          <div style="text-align: center;" class="plan-price" data-mensal="R$ 49,98/mês" data-anual="R$ 550,00 em 12x de R$ 45,83">R$ 49,98/mês</div>
         </ul>
         <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/DA9J2di'">Assinar Plano Mensal</button>
         <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/IA1ysjK'"></a>Assinar Plano Anual</button>
@@ -419,7 +420,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>12 mini polaroids</li>
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>1 polaroid de mesa de brinde a cada 3 meses, ou voucher de R$20,00 em produtos da loja disponíveis no mês vigente.</li>
-          <div class="plan-price" data-mensal="R$ 59,98/mês" data-anual="R$ 690,00 em 12x de R$ 57,50">R$ 59,98/mês</div>
+          <div style="text-align: center;" class="plan-price" data-mensal="R$ 59,98/mês" data-anual="R$ 690,00 em 12x de R$ 57,50">R$ 59,98/mês</div>
         </ul>
         <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/6ca2V19'">Assinar Plano Mensal</button>
         <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/X463CQH'"></a>Assinar Plano Anual</button>
