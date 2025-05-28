@@ -318,8 +318,10 @@ input:checked + .slider:before {
   height: 35px;
 }
 
-#credito-texto{
+.credito-texto{
   font-style: italic;
+  font-size: 12px;
+  text-align: center;
 }
 
 
@@ -400,7 +402,6 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
 
     <div style="text-align: center; margin-bottom: 20px; margin-top: 70px;">
       <div style="font-size: 30px;" class="plan-price" data-mensal="Plano Mensal" data-anual="Plano Anual">Plano Mensal</div>
-      <p id="credito-texto">Crédito recorrente, não desconta o limite do cartão</p>
       <label class="switch-label">
         <input type="checkbox" id="togglePlano">
         <span class="slider"></span>
@@ -416,6 +417,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>1 foto tamanho 15x21 de brinde a cada 3 meses.</li>
           <div style="text-align: center;" class="plan-price" data-mensal="R$ 29,98/mês" data-anual="R$ 320,00 em 12x de R$ 26,76">R$ 29,98/mês</div>
+          <p class="credito-texto">Crédito recorrente, não desconta o limite do cartão</p>
         </ul>
         <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/B2lBlfo'" >Assinar Plano Mensal</button>
         <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/FVyDMTk'" >Assinar Plano Anual</button>
@@ -430,6 +432,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>12 mini polaroids de brinde a cada 3 meses.</li>
           <div style="text-align: center;" class="plan-price" data-mensal="R$ 49,98/mês" data-anual="R$ 550,00 em 12x de R$ 45,83">R$ 49,98/mês</div>
+          <p class="credito-texto">Crédito recorrente, não desconta o limite do cartão</p>
         </ul>
         <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/DA9J2di'">Assinar Plano Mensal</button>
         <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/IA1ysjK'"></a>Assinar Plano Anual</button>
@@ -445,6 +448,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
           <li>1 ímã de geladeira modelo polaroid</li>
           <li>1 polaroid de mesa de brinde a cada 3 meses, ou voucher de R$20,00 em produtos da loja disponíveis no mês vigente.</li>
           <div style="text-align: center;" class="plan-price" data-mensal="R$ 59,98/mês" data-anual="R$ 690,00 em 12x de R$ 57,50">R$ 59,98/mês</div>
+          <p class="credito-texto">Crédito recorrente, não desconta o limite do cartão</p>
         </ul>
         <button class="historia-mensal" onclick="window.location.href='https://pay.kiwify.com.br/6ca2V19'">Assinar Plano Mensal</button>
         <button class="historia-anual" onclick="window.location.href='https://pay.kiwify.com.br/X463CQH'"></a>Assinar Plano Anual</button>
@@ -473,6 +477,8 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
   const prices = document.querySelectorAll('.plan-price');
   const btnMensal = document.querySelectorAll('.historia-mensal');
   const btnAnual = document.querySelectorAll('.historia-anual');
+  const creditotx = document.querySelectorAll('.credito-texto')
+
 
   function atualizarVisibilidade() {
     if (toggle.checked) {
@@ -483,6 +489,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
 
       // Mostra só botões anuais
       btnMensal.forEach(btn => btn.style.display = 'none');
+      creditotx.forEach(btn => btn.style.display = 'none');
       btnAnual.forEach(btn => btn.style.display = 'inline-block');
     } else {
       // Preço mensal
@@ -492,6 +499,7 @@ Além disso, com a praticidade de um plano, você não precisa se preocupar com 
 
       // Mostra só botões mensais
       btnMensal.forEach(btn => btn.style.display = 'inline-block');
+      creditotx.forEach(btn => btn.style.display = 'inline-block');
       btnAnual.forEach(btn => btn.style.display = 'none');
     }
   }
