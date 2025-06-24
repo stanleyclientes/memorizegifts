@@ -330,6 +330,52 @@ input:checked + .slider:before {
   font-weight: 600;
 }
 
+.mobile-menu {
+  display: none;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.hamburger {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #a86c6c;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.menu-items {
+  display: none;
+  flex-direction: column;
+  background-color: #E0D2C7;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid #a86c6c;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #2e2e2e;
+  padding: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+.quemsomos {
+  cursor: pointer;
+  text-decoration: none;
+  color: #2e2e2e;
+}
+.quemsomos:hover {
+  text-decoration: underline;
+}
+
   @media (max-width: 768px) {
     .carousel {
       display: flex;
@@ -360,6 +406,10 @@ input:checked + .slider:before {
     .logo{
       max-width: 70%;
     }
+
+    .mobile-menu {
+      display: block;
+    }
   }
   </style>
 </head>
@@ -367,8 +417,17 @@ input:checked + .slider:before {
 
   <header>
     <img src="/img/logo.png" class="logo" alt="">
+    <a href="quemsomos.html" class="quemsomos">Quem Somos</a>
+    
     <!-- <nav>
     </nav> -->
+      <!-- <div class="mobile-menu">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="menu-items" id="menuItems">
+          <a href="./quemsomos.html">Quem somos</a>
+        </div>
+      </div> -->
+
   </header>
 
   <section class="main-section">
@@ -524,4 +583,7 @@ Além disso, com a praticidade de um plano, você revela cada momento sem se pre
 
   setInterval(showNextImage, 3000); // muda a imagem a cada 1 segundo
 </script>
+
+
+
 </html>
